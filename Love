@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(145deg, #fff0f5, #ffe0eb, #fff7f0);
+  color: #70465a;
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: appear 0.8s ease;
+}
+
+.content {
+  width: 100%;
+  max-width: 430px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #bc7897;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #b94c78;
+  font-size: clamp(32px, 8vw, 44px);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.heart {
+  font-size: 75px;
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 8px 12px #e8a1bd55);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 27px;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(135deg, #ed78a5, #d84f86);
+  box-shadow: 0 9px 24px #d84f8640;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 18px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #d84f8655;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.small-note {
+  margin-top: 22px;
+  font-size: 12px;
+  color: #b47b96;
+}
+
+.card {
+  background: #ffffffb8;
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  padding: 27px 23px;
+  box-shadow: 0 18px 50px #b84c7812;
+  backdrop-filter: blur(8px);
+}
+
+.love-letter {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.love-letter p {
+  margin: 12px 0;
+}
+
+.signature {
+  text-align: center;
+  color: #bd4e7d;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  margin-top: 24px;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp linear forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.12); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.08); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+  15% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-110vh) rotate(35deg); }
+}
+
+@media (max-width: 380px) {
+  .card { padding: 23px 17px; }
+  .love-letter { font-size: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST SCREEN -->
+<section class="screen active" id="first">
+  <div class="content">
+    <div class="eyebrow">A tiny surprise for my favourite human</div>
+
+    <div class="heart">💌</div>
+
+    <h1>Hey, you!</h1>
+
+    <p>
+      I have something to tell you.<br>
+      But first, you have to answer one very important question...
+    </p>
+
+    <h2 style="font-size:19px; color:#9e466d; margin-top:25px;">
+      Do you love me? 🥹
+    </h2>
+
+    <button onclick="openLove()">Click me if you love me 💗</button>
+
+    <div class="small-note">P.S. There's only one right answer. Hehe. ♡</div>
+  </div>
+</section>
+
+<!-- LOVE LETTER SCREEN -->
+<section class="screen" id="second">
+  <div class="content">
+    <div class="eyebrow">Just for you, always ♡</div>
+
+    <div style="font-size:48px; margin-bottom:12px;">
+      🧸💗
+    </div>
+
+    <h1>My favourite person</h1>
+
+    <p style="margin-bottom:24px;">
+      There's something I hope you never forget...
+    </p>
+
+    <div class="card love-letter">
+      <p>Hey, my love, ❤️</p>
+
+      <p>
+        <strong>I love you. So, so much.</strong>
+      </p>
+
+      <p>
+        I know you are strong. I know you handle so much,
+        even when things aren't easy and you don't always
+        talk about what's going on inside your mind.
+      </p>
+
+      <p>
+        But baby, you don't have to be strong every single
+        moment. You are allowed to feel tired, confused,
+        upset, or simply not okay.
+      </p>
+
+      <p>
+        Whatever you are thinking, whatever the situation
+        is, and no matter how difficult life gets, please
+        remember that <strong>I'm here for you.</strong>
+      </p>
+
+      <p>
+        I may not always have the perfect words or be able
+        to fix everything, but I'll listen to you, believe
+        in you, encourage you, and stand beside you.
+        You don't have to figure everything out alone.
+      </p>
+
+      <p>
+        On your good days, I'll celebrate you. On your
+        difficult days, I'll remind you of the wonderful
+        person you are. And on the days when you doubt
+        yourself, I'll believe in you a little extra. 🫶🏻
+      </p>
+
+      <p>
+        Please take care of yourself for me, okay?
+        You matter so much more than you realise.
+      </p>
+
+      <p>
+        No matter what today looks like, I hope you know
+        how loved you are.
+      </p>
+
+      <div class="signature">
+        You and me, okay? Always. ❤️
+      </div>
+    </div>
+
+    <button onclick="showMore()">One last little thing 🥹</button>
+
+    <div class="small-note">
+      Made with all my love, just for you. ♡
+    </div>
+  </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+<section class="screen" id="third">
+  <div class="content">
+    <div style="font-size:75px;">🥹❤️</div>
+
+    <h1>If you ever forget...</h1>
+
+    <p style="font-size:19px; line-height:2;">
+      You are loved.<br>
+      You are enough.<br>
+      You are capable of beautiful things.<br>
+      And you will never have to earn my care
+      by pretending to be okay.
+    </p>
+
+    <div class="card">
+      <p style="font-size:18px; color:#b94c78;">
+        A little reminder, for every difficult day:
+      </p>
+
+      <h2 style="font-family:'Playfair Display',serif;">
+        I LOVE YOU. ❤️
+      </h2>
+
+      <p>Today, tomorrow, and through the messy in-between.</p>
+
+      <div style="font-size:35px;">🫂💕🧸</div>
+    </div>
+
+    <button onclick="showScreen('second')">
+      Read my letter again 💌
+    </button>
+
+    <div class="small-note">
+      Sending you the biggest hug in the world. ♡
+    </div>
+  </div>
+</section>
+
+<script>
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openLove() {
+  showScreen('second');
+  createHearts(24);
+}
+
+function showMore() {
+  showScreen('third');
+  createHearts(35);
+}
+
+function createHearts(count) {
+  const symbols = ['💗', '💕', '♡', '💖', '🩷'];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement('span');
+
+    heart.className = 'floating-heart';
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (14 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+    heart.style.animationDelay = (Math.random() * 1.5) + 's';
+
+    document.body.appendChild(heart);
+
+    heart.addEventListener('animationend', () => heart.remove());
+  }
+}
+</script>
+
+</body>
+</html>
